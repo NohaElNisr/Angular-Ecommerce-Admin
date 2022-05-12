@@ -1,0 +1,33 @@
+
+ <mat-dialog-content>  
+   
+    <br>  
+        <table class="table">  
+            <tr>  
+                <th> Id </th>  
+                 <td> {{currprd?.id}} </td>   
+            </tr>  
+            <tr>  
+                <th> Name </th>  
+                <td> {{currprd?.name}}</td>  
+            </tr>  
+             <tr>  
+                <th> Price </th>  
+                <td> {{currprd?.price}} </td>  
+            </tr>  
+            <tr>  
+                <th> Quantity </th>  
+                <td> {{currprd?.quantity}} </td>  
+            </tr>  
+            <tr>  
+                <th> Image </th>  
+                <td>   <img [src]="createImgPath(currprd?.image)" alt="profile picture" style="width:160px; height:160px;"> </td>  
+            </tr>  
+             
+          
+        </table>  
+    </mat-dialog-content>  
+    <mat-dialog-actions align="center">  
+        <button class="mat-raised-button btn btn-success" (click)="close()">Close</button>  
+    </mat-dialog-actions>
+ 

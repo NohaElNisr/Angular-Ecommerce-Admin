@@ -1,0 +1,63 @@
+<!-- <p>Make a New Order</p>
+<div class="mb-3">
+  <label for="" class="form-label">Client Name</label>
+  <input type="text"
+    class="form-control" name="" id="" #clientname placeholder="Your Name">
+  <small id="helpId" class="form-text text-muted">Help text</small>
+</div>
+
+
+
+<hr>
+<div style="background-color: lightgrey;">
+    <app-products [receivedSelectedCatID]="selectedcatID" (OnAddToCart)="showcart($event)"  > </app-products>
+</div> -->
+
+ <!-- <h2>
+    order total price:{{ReceivedorderToTalPrice|currency}}
+</h2>  -->
+<!-- <table class="table" >
+    <thead>
+      <tr>
+  
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">SelectedQuantity</th>
+        <th scope="col">UnitPrice</th>
+        <th scope="col">TotalPrice</th>
+        <th scope="col">TotalPrice_with_Taxvalue </th>
+
+        <th scope="col">Remove</th>
+      </tr>
+    </thead>
+ 
+    <tbody>
+      <ng-container *ngFor="let item of ReceivedCartItem">
+        <tr >
+  
+          <th scope="row">{{item.productID}}</th>
+          <td>{{item.productName}}</td>
+          
+          <td ><input type="number" #itemcount class="form-control " [(ngModel)]="item.Selectedquantity" ></td>
+          <td>{{item.UnitPrice|currency}}</td>
+          <td>{{item.TotalPrice|currency}}</td>
+          <td>{{item.TaxValue|currency}}</td>
+         <td><button class="btn btn-secondary"(click) ="Remove()">Remove From Cart</button></td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+  <button class="btn btn-secondary" #PlaceOrder (click)="checkout()">Place Order</button> -->
+
+
+  <!-- <div class="mb-3">
+    <label for="" class="form-label"></label>
+    
+    <select class="form-control" name="cat" id="catsel" [(ngModel)]="selectedcatID">
+        <option value="0"> Select All</option>
+        <option *ngFor="let item of catList" [value]="item.id">
+            {{item.name}}
+        </option>
+    </select>
+    </div> -->
+    

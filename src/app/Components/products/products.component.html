@@ -1,0 +1,192 @@
+
+<h2>{{store.Name}}</h2>
+<!-- <img [src]="store.Img"> -->
+<!-- <a name="" id="" class="btn btn-primary" [routerLink]="['/Admin/newproduct']" routerLinkActive="router-link-active" role="button">Add Product</a>
+
+<br><hr>
+<label>Enter Your Name</label> -->
+
+<!-- <input class="form-control form-control-lg d-block" type="text" placeholder=".form-control-lg" [(ngModel)]="ClientName">
+<small>{{ClientName}}</small> -->
+<!-- <br>
+<table class="table" *ngIf="IsPurshased">
+  <thead>
+    <tr>
+
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+      <th scope="col">Purchasedate</th>
+      <th scope="col">Img</th>
+      <th scope="col">Items Count</th>
+      <th scope="col">Details</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th> -->
+
+      <!-- <th scope="col">Add To Cart</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let item of prdListofCat; let j=index">
+      <tr >
+
+        <th scope="row">{{item.id}}</th> -->
+
+        <!-- <td>{{item.name}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.price}}</td>
+
+        <td>{{Purchasedate|date:"mediumTime"}}</td> -->
+        <!-- <td><img src="{{item.image}}" width="100px " height="100px"></td> -->
+        <!-- <td><img [src]="createImgPath(item.image)" alt="profile picture" style="width:60px; height:60px;"></td>
+       <td ><input type="number" #itemcount class="form-control "></td>
+     
+        <td><a name="" id="" class="btn btn-primary" [routerLink]="['/Admin/Products',item.id]" routerLinkActive="router-link-active"  role="button">Details</a></td>
+        <td><a name="" id="" class="btn btn-primary" [routerLink]="['/Admin/EditProduct',item.id]" routerLinkActive="router-link-active"  role="button">Edit</a></td> -->
+        <!-- <td><a name="" id="" class="btn btn-primary" [routerLink]="['/DeleteProduct',item.id]" routerLinkActive="router-link-active"  role="button">Delete</a></td> -->
+        <!-- <td><button class="btn btn-secondary">Edit</button></td> -->
+<!-- 
+        <td><button class="btn btn-secondary"(click) ="delete(item.id)" >Delete</button></td>
+
+        <td><button class="btn btn-secondary"(click) ="Addtocart(item,+itemcount.value)" >Add TO Cart</button></td>
+
+      </tr>
+    </ng-container>
+  </tbody>
+</table> -->
+<!-- <div *ngIf="IsShow">
+  <h3>Thanks for purchasing from our Store {{ClientName}}</h3>
+</div>
+
+<button type="button" (click)="Buy()" class="btn btn-primary"> BUY</button>
+<br> -->
+<!-- <div class="card d-inline-block mx-2" appProductCard="Blue" style="width: 18rem;" *ngFor="let item of prdListofCat">
+  <img src="{{item.image}}" width="100px " height="100px" class="card-img-top " alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{item.name}}</h5>
+    <p class="card-text">Price:{{item.price}}</p>
+    <a href="#" class="btn btn-primary">Add TO Cart</a>
+  </div>
+</div> -->
+<div class="mb-3">
+  <label for="" class="form-label" style="font-size: 25px; ">Categories</label>
+  
+ <br>
+  <i  class="fa-solid fa-mobile-screen-button mx-3"style="font-size: 50px; color: cadetblue; "></i>
+  <i class="fa fa-laptop  mx-3" style="font-size: 50px; color: cadetblue;"></i>
+  <i class="fa fa-clock-o  mx-3" style="font-size: 50px; color: cadetblue;"></i>
+  <i class="fa fa-headphones  mx-3" style="font-size: 50px; color: cadetblue;"></i>
+  </div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  
+  <!-- <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container> -->
+
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+
+  <!-- <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef> Weight </th>
+    <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+  </ng-container> -->
+
+  <ng-container matColumnDef="Purchasedate">
+    <th mat-header-cell *matHeaderCellDef> Purchasedate </th>
+    <td mat-cell *matCellDef="Purchasedate"> {{Purchasedate|date:"mediumTime"}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="quantity">
+    <th mat-header-cell *matHeaderCellDef> Quantity </th>
+    <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+  </ng-container>
+
+  <!-- <ng-container matColumnDef="image">
+    <th mat-header-cell *matHeaderCellDef> Image Url </th>
+    <td mat-cell *matCellDef="let element"> <img [src]="createImgPath(element.image)"alt="profile picture" style="width:60px; height:60px;" /> </td>
+  </ng-container> -->
+  <ng-container matColumnDef="Edit">
+    <th mat-header-cell  *matHeaderCellDef > Edit </th>
+    <td mat-cell *matCellDef="let element" >
+         <button mat-button  style="color:cadetblue" [routerLink]="['/Admin/EditProduct',element.id]" routerLinkActive="router-link-active" >Edit</button>
+    </td>
+  </ng-container>
+  
+  <ng-container matColumnDef="Details">
+    <th mat-header-cell  *matHeaderCellDef > Details </th>
+    <td mat-cell *matCellDef="let element" >
+         <!-- <button mat-button class="btn btn-primary" [routerLink]="['/Admin/Products',element.id]" routerLinkActive="router-link-active" >Details</button> -->
+         <button mat-button style="color:cadetblue" (click)="openDialog(element)">
+          Details
+        </button>
+        </td>
+  </ng-container>
+
+
+  
+  <ng-container matColumnDef="Delete">
+    <th mat-header-cell  *matHeaderCellDef > Delete </th>
+    <td mat-cell *matCellDef="let element" >
+         <button mat-button style="color:cadetblue" (click) ="openDialogdelete(element)"  >Delete</button>
+    </td>
+  </ng-container>
+ 
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+<!-- <section style="background-color: rgb(198, 225, 228);">
+  <div class="container py-5 ml-auto my-4">
+    
+    <input type="text" class="form-control"[(ngModel)]="idNumber" placeholder="Enter Your NID">
+    <br>
+    <select [(ngModel)]="selectdate" class="form-control">
+      <option>FullDate</option>
+      <option>Year</option>
+      <option>Mounth</option>
+      <option>Day</option>
+
+    </select>
+
+  </div>
+  <<div [ngSwitch]="selectdate">
+    <div *ngSwitchCase="'FullDate'">{{idNumber|iDNumber|date:"fullDate"}}</div>
+    <div *ngSwitchCase="'Year'">{{idNumber|iDNumber|date:"YYYY"}}</div>
+    <div *ngSwitchCase="'Mounth'">{{idNumber|iDNumber|date:"MM"}}</div>
+    <div *ngSwitchCase="'Day'">{{idNumber|iDNumber|date:"dd"}}</div>
+
+  </div> 
+</section> -->
+<!-- <div style="background-color: #eee;">
+  <div class="container py-5 ml-auto my-4">
+      <input type="text"   class="form-control "  [(ngModel)]="plainCreditCard">
+      <div>
+          
+              {{plainCreditCard |CreditCard}}
+         
+      </div>
+  </div>
+</div> -->
+<!-- <br>
+<div class="bg-danger">
+  {{orderTotalPrice}}
+</div> -->
+<!-- <label>CraditCard</label>
+
+<div class="form-control form-control-lg d-block"> {{plainCreditCard|CreditCard}}</div> -->
